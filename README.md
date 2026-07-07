@@ -33,7 +33,7 @@ Data disimpan menggunakan file **JSON** sesuai ketentuan soal sehingga tidak mem
 ## Clone Repository
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/psyco357/live-code.git
 cd live-code
 ```
 
