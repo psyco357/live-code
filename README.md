@@ -1,4 +1,4 @@
-# Salesforce Readiness - Live Coding Exercise
+# Live Coding
 
 ## Deskripsi
 
