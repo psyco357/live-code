@@ -125,6 +125,6 @@ Berdasarkan pemahaman saya, implementasi pada Salesforce kemungkinan menggunakan
 * Apex apabila terdapat business logic yang lebih kompleks
 
 
-# Pembalajaran saya jawab di file
+# Pembelajaran saya jawab di file
     * Implementasi Selesforce.txt
     * Learning Notes.txt
