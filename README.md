@@ -19,7 +19,7 @@ Data disimpan menggunakan file **JSON** sesuai ketentuan soal sehingga tidak mem
 ## Gambar Insert
 ![alt text](image-2.png)
 
-## Gambar Datail
+## Gambar Detail
 ![alt text](image.png)
 
 ## Gambar Update
@@ -34,7 +34,7 @@ Data disimpan menggunakan file **JSON** sesuai ketentuan soal sehingga tidak mem
 
 ```bash
 git clone <repository-url>
-cd salesforce-readiness
+cd live-code
 ```
 
 ## Install Dependency
@@ -55,6 +55,8 @@ Buka browser:
 http://localhost:3000
 ```
 
+> Halaman awal (`/`) akan otomatis redirect ke `/leads`.
+
 ---
 
 # Struktur Project
@@ -63,26 +65,43 @@ http://localhost:3000
 app/
 ├── api/
 │   └── leads/
-│       ├── route.ts
-│       └── [id]/route.ts
+│       ├── route.ts          # GET (list), POST (create)
+│       └── [id]/
+│           └── route.ts      # GET (detail), PATCH (update status)
 │
 ├── leads/
-│   ├── page.tsx
-│   ├── new/page.tsx
-│   └── [id]/page.tsx
+│   ├── page.tsx              # Daftar semua lead
+│   ├── new/
+│   │   └── page.tsx          # Form tambah lead baru
+│   └── [id]/
+│       └── page.tsx          # Detail lead
 │
+├── layout.tsx
+└── page.tsx                  # Redirect ke /leads
+
 components/
-│   └── MarkQualifiedButton.tsx
-│
+└── markqualifiedbutton.tsx   # Tombol Mark as Qualified (Client Component)
+
 lib/
-│   └── lead-service.ts
-│
+└── lead.services.ts          # Logic baca/tulis data leads.json
+
 types/
-│   └── lead.ts
-│
+└── lead.types.ts             # Interface Lead, LeadStatus, CreateLeadInput
+
 data/
-│   └── leads.json
+└── leads.json                # Penyimpanan data (pengganti database)
 ```
+
+---
+
+# API Endpoints
+
+| Method | Endpoint          | Deskripsi                        |
+|--------|-------------------|----------------------------------|
+| GET    | `/api/leads`      | Ambil semua lead                 |
+| POST   | `/api/leads`      | Tambah lead baru                 |
+| GET    | `/api/leads/:id`  | Ambil detail lead berdasarkan id |
+| PATCH  | `/api/leads/:id`  | Update status lead               |
 
 ---
 
@@ -92,10 +111,11 @@ data/
 * Tidak menggunakan database sesuai instruksi soal.
 * Status Lead hanya terdiri dari:
 
-  * New
-  * Contacted
-  * Qualified
+  * `New`
+  * `Contacted`
+  * `Qualified`
 * Ketika tombol **Mark as Qualified** ditekan, field `qualifiedAt` akan otomatis diisi menggunakan waktu saat proses dilakukan.
+* Validasi input (nama, perusahaan, email) dilakukan di sisi API sebelum data disimpan.
 * Endpoint API hanya digunakan untuk kebutuhan CRUD sederhana.
 
 ---
