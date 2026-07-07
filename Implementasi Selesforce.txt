@@ -1,0 +1,55 @@
+# Implementasi Fitur pada Salesforce (Pemahaman Saya)
+
+Saya belum memiliki pengalaman profesional menggunakan Salesforce.
+Penjelasan berikut merupakan hasil pembelajaran saya melalui dokumentasi resmi Salesforce,
+referensi di internet, dan bantuan AI selama mengerjakan studi kasus ini. Oleh karena itu,
+penjelasan ini merupakan pemahaman saya mengenai bagaimana fitur tersebut kemungkinan 
+diimplementasikan di Salesforce.
+
+# 1.Bagaimana fitur ini kemungkinan diimplementasikan di Salesforce
+fitur ini menggunakan Standart Object Lead yang sudah tersedia di Salesforce.
+Object lead dirancang menyimpan data calon pelanggan dan tidak perlu untuk membuat object baru.
+
+dapat di petakan aplikasi yang saya buat adalah
+aplikasi            =>      Salesforce
+Nama                =>      Name
+Nama Perusahaan     =>      Company
+Email               =>      Email
+Status              =>      Lead Status (Picklist)
+Qualified At        =>      Custom Field (Date/Time)
+
+Sales Dapat Membuat Lead baru dengan input, melihat list data di menu list dan juga melihat detainya.
+nah di halaman detail ini ada tombol untuk update status dan juga create Qualified At saat tombol di tekan.
+
+# 2. Bagian yang dapat dibuat menggunakan konfigurasi (Declarative)
+data yang bisa di buat menggunkan konfigurasi tanpa menulis code 
+    - menggunkaan Standart Object Lead
+    - membuat field Qualified At date Time
+    - mangatur field status sebagai Picklist (New, Contacted, Qualified).
+    - membuat halaman input, detail menggunakan Lightning App Builder(dengan cara drag n drop).
+    - Menampilkan daftar Lead menggunakan List View.
+    - Menggunakan Validation Rules agar field wajib diisi dan dengan format yang valid.
+    - Menggunakan Salesforce Flow agar ketika Status berubah menjadi Qualified, field Qualified At
+      otomatis diisi dengan tanggal dan waktu saat itu
+# 3. Bagian yang memerlukan kode
+ hampir Keseluruhan dalam studi kasus ini bisa di selesaikan dengan fitur declarative
+ namun kode(Apex atau Lightning Web Component) di perlukan bila
+    - ada proses bisnis yang lebih kompleks
+    - Integrasi dengan sistem lain dengan API
+    - membutuhkan tmpilan yang tidak dapat di buat dengan komponen standart Salesforce.
+    - Validasi atau perhitungan yang tidak terdapat di Salesforce flow atau Validation rules.(kondisi jika skor di atas 80, buat Opportunity).
+
+# 4. Teknologi Salesforce yang menurut saya cocok
+    - Lead Object (menyimpan data calon pelanggan karena sudah object standart Salesforce)
+    - flow (perubahan status menjadi Qualified dan mengisi Qualified At tanpa code)
+    - Validation Rules (untuk memastikan field diisi sesuai dengan format yang benar).
+    - Lightning App Builder (untuk membuat halaman create, detail dan juga list view menggunakan komponen bawaan)
+    - Apex(di gunakan jika ada Integrasi dengan aplikasi lain atau API)
+    - Salesforce Lightning Design System atau SLDS (untuk membuat tampilan Salesforce tatap konsisten deng CRM lainnya)
+
+#Kesimpulan yang dapat saya simpulkan.
+    Salesforce Memiliki konsep "konfigurasi dulu, coding ketika di perlukan".
+    lebih mengutamakan konfigurasi yang sudah di sediakan oleh Salesforce semaksimal mungkin.seperti
+    Flow, Validation Rules, dan Lightning App Builder sebelum menggunakan kode seperti Apex atau Lightning Web Component.
+    karna dengan cara seperti itu lebih mudah di kelola oleh administrator tanpa perlu  Melibatkan developers.
+

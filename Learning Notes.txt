@@ -1,0 +1,63 @@
+# Learning Notes
+
+## Hal Baru yang Saya Pelajari
+
+Saya mempelajari konsep dasar Salesforce,
+ khususnya mengenai Standard Object (Lead), Salesforce Flow, Lightning Web Component (LWC),
+  Apex, Validation Rules, dan Lightning App Builder. Saya juga memahami jika Salesforce memiliki
+   pendekatan  mengutamakan konfigurasi sebelum
+    menggunakan kode atau configuration first, code when necessary.
+
+Selain itu, saya mempelajari cara memetakan aplikasi CRUD  Next.js ke dalam konsep 
+implementasi di Salesforce CRM.
+
+---
+
+## Referensi yang Digunakan
+
+* Dokumentasi resmi Next.js
+* Dokumentasi resmi Salesforce
+* Dokumentasi React
+* MDN Web Docs
+* ChatGPT sebagai pendamping belajar dan diskusi konsep
+
+---
+
+## Bagaimana Saya Menggunakan AI
+
+Saya menggunakan AI untuk:
+
+* Memahami konsep Salesforce yang belum saya kuasai menjelaskan ke anak kecil.
+* Membandingkan beberapa pendekatan implementasi.
+* Membantu menyusun struktur project.
+* Memvalidasi pemahaman saya mengenai Flow, Apex, dan Lightning Web Component.
+
+Seluruh kode tetap saya pahami, saya sesuaikan dengan kebutuhan studi kasus, 
+dan saya uji secara langsung sebelum digunakan.
+
+---
+
+## Keputusan Teknis
+
+* Menggunakan Next.js App Router karena merupakan framework yang paling saya kuasai.
+* Menggunakan API Route agar arsitektur menyerupai REST API sederhana.
+* Menggunakan file JSON sebagai penyimpanan data sesuai instruksi soal.
+* Memisahkan business logic ke dalam `lead-service.ts` agar kode lebih mudah dipelihara.
+* Menggunakan TypeScript untuk meningkatkan type safety.
+
+---
+
+## Jika Diberi Waktu Tambahan
+
+Jika Diberi Waktu Tambahan
+
+Beberapa hal yang ingin saya tambahkan untuk meningkatkan kualitas aplikasi adalah:
+
+* Mengganti penyimpanan file JSON dengan database relasional seperti PostgreSQL atau MySQL.
+* Menambahkan ORM atau data access layer agar pengelolaan data lebih terstruktur.
+* Menambahkan validasi input yang lebih lengkap, baik di sisi client maupun server.
+* Menambahkan Unit Testing dan Integration Testing untuk memastikan setiap fitur berjalan dengan baik.
+* Mengimplementasikan tampilan yang mengikuti Salesforce Lightning Design System (SLDS) agar lebih menyerupai antarmuka Salesforce.
+* Menambahkan autentikasi dan otorisasi sehingga hanya pengguna yang berhak yang dapat mengelola data Lead.
+* Menyiapkan proses deployment menggunakan Docker agar aplikasi lebih mudah dijalankan di berbagai environment.
+* Menambahkan fitur pencarian, filter, sorting, dan pagination untuk memudahkan pengelolaan data Lead dalam jumlah besar.

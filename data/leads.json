@@ -1,0 +1,31 @@
+[
+  {
+    "id": "1",
+    "name": "John Doe",
+    "company": "Google",
+    "email": "john@gmail.com",
+    "status": "Qualified",
+    "qualifiedAt": "2026-07-07T11:36:52.507Z"
+  },
+  {
+    "id": "2",
+    "name": "Jane Smith",
+    "company": "Microsoft",
+    "email": "jane@example.com",
+    "status": "Contacted"
+  },
+  {
+    "id": "529890fb-1de0-4bac-b283-e70c70ddd3f2",
+    "name": "Budi Santoso",
+    "company": "OpenAI Indonesia",
+    "email": "budi@example.com",
+    "status": "New"
+  },
+  {
+    "id": "c6042171-b5ab-4993-b0e2-82900ca3f985",
+    "name": "test frontend",
+    "company": "frontend",
+    "email": "frontend@gmail.com",
+    "status": "New"
+  }
+]

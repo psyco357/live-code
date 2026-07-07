@@ -1,36 +1,113 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Salesforce Readiness - Live Coding Exercise
 
-## Getting Started
+## Deskripsi
 
-First, run the development server:
+Project ini merupakan implementasi sederhana fitur **Lead Management** menggunakan **Next.js (App Router)**.
+
+Fitur yang tersedia:
+
+* Menambahkan Lead baru.
+* Melihat daftar Lead.
+* Melihat detail Lead.
+* Mengubah status Lead menjadi **Qualified**.
+* Menyimpan tanggal dan waktu saat Lead diubah menjadi **Qualified**.
+
+Data disimpan menggunakan file **JSON** sesuai ketentuan soal sehingga tidak memerlukan database.
+
+---
+
+# Cara Menjalankan Project
+
+## Clone Repository
+
+```bash
+git clone <repository-url>
+cd salesforce-readiness
+```
+
+## Install Dependency
+
+```bash
+npm install
+```
+
+## Menjalankan Development Server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Buka browser:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+# Struktur Project
 
-To learn more about Next.js, take a look at the following resources:
+```
+app/
+├── api/
+│   └── leads/
+│       ├── route.ts
+│       └── [id]/route.ts
+│
+├── leads/
+│   ├── page.tsx
+│   ├── new/page.tsx
+│   └── [id]/page.tsx
+│
+components/
+│   └── MarkQualifiedButton.tsx
+│
+lib/
+│   └── lead-service.ts
+│
+types/
+│   └── lead.ts
+│
+data/
+│   └── leads.json
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+# Asumsi yang Digunakan
 
-## Deploy on Vercel
+* Data disimpan pada file `data/leads.json`.
+* Tidak menggunakan database sesuai instruksi soal.
+* Status Lead hanya terdiri dari:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+  * New
+  * Contacted
+  * Qualified
+* Ketika tombol **Mark as Qualified** ditekan, field `qualifiedAt` akan otomatis diisi menggunakan waktu saat proses dilakukan.
+* Endpoint API hanya digunakan untuk kebutuhan CRUD sederhana.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+# Hal yang Belum Sempat Dikerjakan
+
+* Pagination pada daftar Lead.
+* Fitur pencarian dan filter berdasarkan status.
+* Konfirmasi sebelum mengubah status menjadi Qualified.
+* Unit Testing dan Integration Testing.
+* Penyimpanan menggunakan database (misalnya PostgreSQL atau MySQL).
+* Autentikasi dan otorisasi pengguna.
+* Tampilan UI yang lebih menyerupai Salesforce Lightning Design System (SLDS).
+
+---
+
+# Salesforce Readiness
+
+Berdasarkan pemahaman saya, implementasi pada Salesforce kemungkinan menggunakan:
+
+* Standard Object **Lead**
+* Picklist untuk Status
+* Custom Field `Qualified At`
+* Salesforce Flow untuk mengisi tanggal saat status berubah menjadi Qualified
+* Lightning App Builder untuk halaman
+* Lightning Web Component apabila diperlukan UI khusus
+* Apex apabila terdapat business logic yang lebih kompleks
