@@ -16,6 +16,18 @@ Data disimpan menggunakan file **JSON** sesuai ketentuan soal sehingga tidak mem
 
 ---
 
+## Gambar Insert
+![alt text](image-2.png)
+
+## Gambar Datail
+![alt text](image.png)
+
+## Gambar Update
+![alt text](image-1.png)
+
+---
+
+
 # Cara Menjalankan Project
 
 ## Clone Repository
@@ -111,3 +123,8 @@ Berdasarkan pemahaman saya, implementasi pada Salesforce kemungkinan menggunakan
 * Lightning App Builder untuk halaman
 * Lightning Web Component apabila diperlukan UI khusus
 * Apex apabila terdapat business logic yang lebih kompleks
+
+
+# Pembalajaran saya jawab di file
+    * Implementasi Selesforce.txt
+    * Learning Notes.txt
